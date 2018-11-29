@@ -1,4 +1,4 @@
-Factory = {}
+local Factory = {}
 Operation = {}
 
 function Factory:new(o)
@@ -103,3 +103,4 @@ operDiv = operDivFactory:CreateOperation()
 operDiv.numberA = 10
 operDiv.numberB = 5
 print(operDiv:GetResult())
+return Factory;
