@@ -17,14 +17,17 @@ function SqlServerUser:GetUserRecord()
 	print("在 SQL Server 中User表获取一条记录")
 end
 
-AccessUser = IUser:new()
+AccessUser = IUser:new();
+AccessUser.storage = {};
 
-function AccessUser:Insert()
-	print("在Access中给User表增加一条记录")
+function AccessUser:Insert(key, value)
+	-- print("在Access中给User表增加一条记录")
+    self.storage[key] = value;
 end
 
-function AccessUser:GetUserRecord()
-	print("在Access中User表获取一条记录")
+function AccessUser:GetRecord(key)
+	-- print("在Access中User表获取一条记录")
+    return self.storage[key];
 end
 
 IDepartment = {}
@@ -50,12 +53,12 @@ AccessDepartment = IDepartment:new();
 AccessDepartment.storage = {};
 
 function AccessDepartment:Insert(key, value)
-	print("在 Access 中给Department表增加一条记录")
+	-- print("在 Access 中给Department表增加一条记录")
     self.storage[key] = value;
 end
 
 function AccessDepartment:GetRecord(key)
-	print("在 Access 中Department表获取一条记录")
+	-- print("在 Access 中Department表获取一条记录")
     return self.storage[key];
 end
 
