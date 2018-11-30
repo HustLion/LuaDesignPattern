@@ -79,28 +79,4 @@ function FactoryDiv:CreateOperation()
 	return OperationDiv:new()
 end
 
-
-operAddFactory = FactoryAdd:new()
-operAdd = operAddFactory:CreateOperation()
-operAdd.numberA = 10
-operAdd.numberB = 5
-print(operAdd:GetResult())
-
-operSubFactory = FactorySub:new()
-operSub = operSubFactory:CreateOperation()
-operSub.numberA = 10
-operSub.numberB = 5
-print(operSub:GetResult())
-
-operMulFactory = FactoryMul:new()
-operMul = operMulFactory:CreateOperation()
-operMul.numberA = 10
-operMul.numberB = 5
-print(operMul:GetResult())
-
-operDivFactory = FactoryDiv:new()
-operDiv = operDivFactory:CreateOperation()
-operDiv.numberA = 10
-operDiv.numberB = 5
-print(operDiv:GetResult())
 return Factory;
