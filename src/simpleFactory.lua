@@ -1,6 +1,6 @@
-OperationFactory = {}
+local OperationFactory = {}
 
-Operation = {}
+local Operation = {}
 
 function Operation:new(o)
 	o = o or {}
@@ -11,13 +11,13 @@ function Operation:new(o)
 	return o
 end
 
-OperationAdd = Operation:new()
+local OperationAdd = Operation:new()
 
-OperationSub = Operation:new()
+local OperationSub = Operation:new()
 
-OperationMul = Operation:new()
+local OperationMul = Operation:new()
 
-OperationDiv = Operation:new()
+local OperationDiv = Operation:new()
 
 
 function OperationAdd:GetResult()
@@ -65,22 +65,4 @@ function OperationFactory:CreateOperation(oper)
 	end
 end
 
-Oper1 = OperationFactory:CreateOperation("+")
-Oper1.numberA = 10
-Oper1.numberB = 5
-print(Oper1:GetResult())
-
-Oper2 = OperationFactory:CreateOperation("-")
-Oper2.numberA = 10
-Oper2.numberB = 5
-print(Oper2:GetResult())
-
-Oper3 = OperationFactory:CreateOperation("*")
-Oper3.numberA = 10
-Oper3.numberB = 5
-print(Oper3:GetResult())
-
-Oper4 = OperationFactory:CreateOperation("/")
-Oper4.numberA = 10
-Oper4.numberB = 5
-print(Oper4:GetResult())
+return OperationFactory;
