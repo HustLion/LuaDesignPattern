@@ -13,10 +13,3 @@ function Singleton:Instance()
 	end
 	return self.instance
 end
-
-s1 = Singleton:Instance()
-s2 = Singleton:Instance()
-
-if s1 == s2 then
-	print("the same object.")
-end
