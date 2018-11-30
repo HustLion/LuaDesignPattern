@@ -8,13 +8,16 @@ function IUser:new(o)
 end
 
 SqlServerUser = IUser:new()
+SqlServerUser.storage = {};
 
-function SqlServerUser:Insert()
-	print("在 SQL Server 中给USer表增加一条记录")
+function SqlServerUser:Insert(key, value)
+	-- print("在 SQL Server 中给USer表增加一条记录")
+    self.storage[key] = value;
 end
 
-function SqlServerUser:GetUserRecord()
-	print("在 SQL Server 中User表获取一条记录")
+function SqlServerUser:GetRecord(key)
+	-- print("在 SQL Server 中User表获取一条记录")
+    return self.storage[key];
 end
 
 AccessUser = IUser:new();
@@ -40,13 +43,16 @@ function IDepartment:new(o)
 end
 
 SqlServerDepartment = IDepartment:new()
+SqlServerDepartment.storage = {};
 
-function SqlServerDepartment:Insert()
-	print("在 SQL Server 中给Department表增加一条记录")
+function SqlServerDepartment:Insert(key, value)
+	-- print("在 SQL Server 中给Department表增加一条记录")
+    self.storage[key] = value;
 end
 
-function SqlServerDepartment:GetDepartmentRecord()
-	print("在 SQL Server中Department表获取一条记录")
+function SqlServerDepartment:GetRecord(key)
+	-- print("在 SQL Server中Department表获取一条记录")
+    return self.storage[key];
 end
 
 AccessDepartment = IDepartment:new();
